@@ -1,7 +1,7 @@
 {
   "name": "trilium-reminder",
   "productName": "Trilium Reminder",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Unofficial desktop todo popup backed by a Trilium note",
   "author": "Lukas Barbisch",
   "homepage": "https://github.com/lbarbisch/Trilium_Reminder",

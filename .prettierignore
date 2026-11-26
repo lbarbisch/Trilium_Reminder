@@ -1,0 +1,7 @@
+out
+dist
+package-lock.json
+tests/fixtures
+docs/.vitepress/cache
+docs/.vitepress/dist
+Trilium Todo Popup Implementation Specification.md

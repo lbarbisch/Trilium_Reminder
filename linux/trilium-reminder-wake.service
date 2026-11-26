@@ -1,0 +1,12 @@
+[Unit]
+Description=Trilium Reminder wake watcher
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+ExecStart="@SCRIPT@" "@APP@"
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target

@@ -1,0 +1,64 @@
+name: Bug report
+description: Something doesn't work as described in the manual
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Never post your ETAPI token, a private server address or your note content.**
+        If you posted a token by mistake, delete it in Trilium under Options → ETAPI right away.
+        Security problems: please report them privately (see SECURITY.md).
+  - type: input
+    id: app-version
+    attributes:
+      label: App version
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: trilium-version
+    attributes:
+      label: Trilium version
+      placeholder: 0.107.0
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system and desktop
+      placeholder: Windows 11 24H2 / Debian 13 with KDE Plasma 6 (X11) / Debian 13 with i3
+    validations:
+      required: true
+  - type: dropdown
+    id: package
+    attributes:
+      label: Package
+      options:
+        - Windows installer
+        - deb
+        - AppImage
+        - Development build
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Lock the screen for 5 seconds
+        2. Unlock
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected and what happened
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log lines
+      description: From main.log (see Troubleshooting → Logs) and, on Linux, `journalctl --user -u trilium-reminder-wake`. Check them for private data first.
+      render: text

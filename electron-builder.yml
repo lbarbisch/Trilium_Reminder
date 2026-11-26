@@ -1,0 +1,48 @@
+appId: io.github.lbarbisch.trilium-reminder
+productName: Trilium Reminder
+directories:
+  output: dist
+files:
+  - out/**
+  - package.json
+extraResources:
+  - from: linux
+    to: linux
+  - from: resources/tray.png
+    to: tray.png
+publish: null
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  artifactName: trilium-reminder-${version}-windows-${arch}-setup.${ext}
+nsis:
+  oneClick: true
+  perMachine: false
+  include: build/installer.nsh
+linux:
+  target:
+    - target: AppImage
+      arch: [x64]
+    - target: deb
+      arch: [x64]
+  category: Utility
+  # The .deb format needs "Name <email>". Set here so package.json needs no email.
+  maintainer: Lukas Barbisch <lbarbisch@users.noreply.github.com>
+  executableName: trilium-reminder
+  syncDesktopName: true
+  executableArgs:
+    - --ozone-platform=x11
+  artifactName: trilium-reminder-${version}-linux-${arch}.${ext}
+deb:
+  depends:
+    - libgtk-3-0
+    - libnotify4
+    - libnss3
+    - libxss1
+    - libxtst6
+    - xdg-utils
+    - libatspi2.0-0
+    - libuuid1
+    - libsecret-1-0
+    - libglib2.0-bin
